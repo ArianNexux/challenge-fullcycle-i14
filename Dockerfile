@@ -4,14 +4,11 @@ WORKDIR /usr/src/app
 
 
 COPY . .
+ENV DATABASE_URL mongodb://root:root@db:27017/nest?authSource=admin
+RUN apt-get update -y && apt-get install openssl -y 
 
-RUN apt-get update -y && apt-get install -y openssl
-
-RUN npm install 
-
-RUN npm install -g nestjs/cli
-
-RUN npm run prisma:generate -y
+RUN npm install && npx prisma generate 
+RUN npm install -g @nestjs/cli
 
 
 CMD ["npm", "run", "start:dev"]

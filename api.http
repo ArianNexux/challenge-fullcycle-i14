@@ -1,0 +1,19 @@
+
+GET http://localhost:3000/routes
+
+
+### WAIT TI
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "Luanda 1",
+    "source": {
+        "lat": 1,
+        "lng": 1
+    },
+    "destination": {
+        "lat": 1,
+        "lng": 1
+    }
+}

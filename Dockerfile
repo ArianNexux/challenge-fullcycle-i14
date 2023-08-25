@@ -11,4 +11,4 @@ RUN npm install && npx prisma generate
 RUN npm install -g @nestjs/cli
 
 
-CMD ["npm", "run", "start:dev"]
+CMD ["tail", "-f", "/dev/null"]
